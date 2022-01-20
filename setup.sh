@@ -22,7 +22,7 @@ install_fonts() {
 install_themes() {
 	if [[ -d "$PDIR" ]]; then
 		echo -e "[*] Creating a backup of your polybar configs..."
-		mv "$PDIR" "${PDIR}.old"
+    mv "$PDIR" "${PDIR}.old.$(date +%s)"
 		{ mkdir -p "$PDIR"; cp -rf $DIR/$STYLE/* "$PDIR"; }
 	else
 		{ mkdir -p "$PDIR"; cp -rf $DIR/$STYLE/* "$PDIR"; }	
